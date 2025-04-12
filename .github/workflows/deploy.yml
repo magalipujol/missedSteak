@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
+      pages: write
     steps:
       - name: checkout # we first checkout the code
         uses: actions/checkout@v4
