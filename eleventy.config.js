@@ -1,4 +1,8 @@
-module.exports = function (eleventyConfig) {
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+
+export default function (eleventyConfig) {
+    eleventyConfig.addPlugin(EleventyHtmlBasePlugin); // https://www.11ty.dev/docs/plugins/html-base/
+
     // Use Nunjucks for templates
     eleventyConfig.setTemplateFormats([
         "md",
