@@ -1,0 +1,35 @@
+# this script is executed on every push to main
+name: Build and deploy GH Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout # we first checkout the code
+        uses: actions/checkout@v4
+      - name: get url # then we get the url of the github pages site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run:
+          | # we use the gh cli to get the url and save it in an environment variable
+          url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
+          echo "url=$url" >> $GITHUB_ENV
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./_site
+          github_token: ${{ secrets.GITHUB_TOKEN }}
