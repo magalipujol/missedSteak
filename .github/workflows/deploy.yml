@@ -23,7 +23,7 @@ jobs:
           node-version: 22
 
       - run: npm ci
-      - run: npm run build -- --pathprefix $GITHUB_REPOSITORY
+      - run: npm run build -- --pathprefix ${{ github.repository }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
