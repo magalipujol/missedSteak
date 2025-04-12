@@ -17,6 +17,11 @@ module.exports = function (eleventyConfig) {
         }
     });
 
+    // Create a collection for recipes
+    eleventyConfig.addCollection("recipes", function (collectionApi) {
+        return collectionApi.getFilteredByGlob("recipes/*.json");
+    });
+
     // Copy assets directly to output
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("css");
