@@ -7,11 +7,14 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: checkout # we first checkout the code
         uses: actions/checkout@v4
+
       - name: get url # then we get the url of the github pages site
         env:
           GH_TOKEN: ${{ github.token }}
