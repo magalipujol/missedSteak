@@ -35,8 +35,7 @@ title: Missed Steak - Vegetarian Recipes
         </div>
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
-            {% for recipe in collections.recipes %}
-            aaaaaaaaaaa
+            {% for filename, recipe in recipes %}
                 {% include "recipe-card.njk" %}
             {% endfor %}
         </div>
@@ -63,6 +62,6 @@ title: Missed Steak - Vegetarian Recipes
 
 <!-- Recipe Modals -->
 
-{% for recipe in collections.recipes %}
+{% for filename, recipe in recipes %}
 {% include "recipe-modal.njk" %}
 {% endfor %}

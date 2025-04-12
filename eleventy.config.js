@@ -2,8 +2,12 @@ module.exports = function (eleventyConfig) {
     // Use Nunjucks for templates
     eleventyConfig.setTemplateFormats([
         "md",
-        "njk"
+        "njk",
     ]);
+
+    eleventyConfig.addFilter('stringify', (data) => {
+        return JSON.stringify(data, null, "\t")
+    })
 
     // Use Nunjucks for HTML templates
     eleventyConfig.setLiquidOptions({
@@ -15,11 +19,6 @@ module.exports = function (eleventyConfig) {
         engines: {
             njk: true
         }
-    });
-
-    // Create a collection for recipes
-    eleventyConfig.addCollection("recipes", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("recipes/*.json");
     });
 
     // Copy assets directly to output
