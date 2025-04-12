@@ -1,6 +1,6 @@
 <!-- Portfolio Modal -->
-<div class="portfolio-modal modal fade" id="portfolio{{ recipe.id }}" tabindex="-1" role="dialog"
-    aria-labelledby="portfolio{{ recipe.id }}Label" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolio{{ recipe.title | slug }}" tabindex="-1" role="dialog"
+    aria-labelledby="portfolio{{ recipe.title | slug }}Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
@@ -12,7 +12,7 @@
                         <div class="col-lg-8">
                             <!-- Portfolio Modal - Title-->
                             <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
-                                id="portfolio{{ recipe.id }}Label">{{ recipe.title }}</h2>
+                                id="portfolio{{ recipe.title | slug }}Label">{{ recipe.title }}</h2>
                             <!-- Icon Divider-->
                             <div class="divider-custom">
                                 <div class="divider-custom-line"></div>
