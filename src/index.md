@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: base.html
 title: Missed Steak - Vegetarian Recipes
 ---
 
@@ -35,8 +35,8 @@ title: Missed Steak - Vegetarian Recipes
         </div>
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
-            {% for filename, recipe in recipes %}
-                {% include "recipe-card.njk" %}
+            {% for filename, recipe in recipes.savory %}
+                {% include "recipe-card.html" %}
             {% endfor %}
         </div>
     </div>
@@ -53,15 +53,20 @@ title: Missed Steak - Vegetarian Recipes
             <div class="divider-custom-icon"><i class="fas fa-candy-cane"></i></div>
             <div class="divider-custom-line"></div>
         </div>
+    <div class="row justify-content-center">
+        {% for filename, recipe in recipes.sweet %}
+            {% include "recipe-card.html" %}
+        {% endfor %}
     </div>
-    <h2 class="text-center text-uppercase text-white">Coming soon!</h2>
-    <img class="img-fluid" style="max-width:50%; display: block;
-        margin-left: auto;
-        margin-right: auto;" src="/assets/img/portfolio/under-construction.svg" alt="..." />
+    </div>
 </section>
 
 <!-- Recipe Modals -->
 
-{% for filename, recipe in recipes %}
-{% include "recipe-modal.njk" %}
+{% for filename, recipe in recipes.savory %}
+{% include "recipe-modal.html" %}
+{% endfor %}
+
+{% for filename, recipe in recipes.sweet %}
+{% include "recipe-modal.html" %}
 {% endfor %}
