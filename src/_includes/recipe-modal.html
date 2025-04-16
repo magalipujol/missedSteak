@@ -38,6 +38,10 @@
                                 <a target="_blank" href="{{ recipe.link }}">Link to recipe</a>
                             </button>
                             {% endif %}
+                            <button class="btn btn-danger" id="deleteRecipe{{ recipe.title | slug }}"
+                                onclick="deleteRecipe('{{ filename }}', '{{ type }}')">
+                                <i class="fas fa-trash-alt fa-fw"></i> Delete Recipe
+                            </button>
                         </div>
                     </div>
                 </div>
