@@ -22,6 +22,27 @@ title: Missed Steak - Vegetarian Recipes
     </div>
 </header>
 
+<!-- Basics Section-->
+<section class="page-section portfolio" id="basics" style="background-color: #8c271e;">
+    <div class="container">
+        <!-- Basics Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white mb-0">Basics</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-leaf"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+            {% set type = "basics" %}
+            {% for filename, recipe in recipes.basics %}
+                {% include "recipe-modal.html" %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <!-- Portfolio Section-->
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
