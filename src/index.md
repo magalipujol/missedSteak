@@ -35,8 +35,9 @@ title: Missed Steak - Vegetarian Recipes
         </div>
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
+            {% set type = "savory" %}
             {% for filename, recipe in recipes.savory %}
-                {% include "recipe-card.html" %}
+                {% include "recipe-modal.html" %}
             {% endfor %}
         </div>
     </div>
@@ -53,20 +54,11 @@ title: Missed Steak - Vegetarian Recipes
             <div class="divider-custom-icon"><i class="fas fa-candy-cane"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-    <div class="row justify-content-center">
-        {% for filename, recipe in recipes.sweet %}
-            {% include "recipe-card.html" %}
-        {% endfor %}
-    </div>
+        <div class="row justify-content-center">
+            {% set type = "sweet" %}
+            {% for filename, recipe in recipes.sweet %}
+                {% include "recipe-modal.html" %}
+            {% endfor %}
+        </div>
     </div>
 </section>
-
-<!-- Recipe Modals -->
-
-{% for filename, recipe in recipes.savory %}
-{% include "recipe-modal.html" %}
-{% endfor %}
-
-{% for filename, recipe in recipes.sweet %}
-{% include "recipe-modal.html" %}
-{% endfor %}

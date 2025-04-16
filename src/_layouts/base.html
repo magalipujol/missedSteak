@@ -196,6 +196,18 @@
             });
         });
     </script>
+
+    <script>
+        function deleteRecipe(filename, type) {
+            // Construct GitHub URL for deletion
+            const usernameSlashRepo = "{{ site.github.usernameSlashRepo }}";
+
+            const githubUrl = `https://github.com/${usernameSlashRepo}/delete/main/src/_data/recipes/${type}/${filename}.json`;
+
+            // Redirect to GitHub
+            window.open(githubUrl, '_blank');
+        }
+    </script>
 </body>
 
 </html>
