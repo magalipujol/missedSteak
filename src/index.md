@@ -28,7 +28,7 @@ title: Missed Steak - Vegetarian Recipes
         <!-- Basics Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-white mb-0">Basics</h2>
         <!-- Icon Divider-->
-        <div class="divider-custom">
+        <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fas fa-leaf"></i></div>
             <div class="divider-custom-line"></div>
