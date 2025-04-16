@@ -36,7 +36,7 @@ title: Missed Steak - Vegetarian Recipes
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
             {% for filename, recipe in recipes.savory %}
-                {% include "recipe-card.html" %}
+                {% include "recipe-modal.html" %}
             {% endfor %}
         </div>
     </div>
@@ -55,18 +55,10 @@ title: Missed Steak - Vegetarian Recipes
         </div>
     <div class="row justify-content-center">
         {% for filename, recipe in recipes.sweet %}
-            {% include "recipe-card.html" %}
+            {% include "recipe-modal.html" %}
         {% endfor %}
     </div>
     </div>
 </section>
 
 <!-- Recipe Modals -->
-
-{% for filename, recipe in recipes.savory %}
-{% include "recipe-modal.html" %}
-{% endfor %}
-
-{% for filename, recipe in recipes.sweet %}
-{% include "recipe-modal.html" %}
-{% endfor %}
